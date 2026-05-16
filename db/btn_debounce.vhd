@@ -11,11 +11,11 @@ entity btn_debounce is
 end entity;
 
 architecture rtl of btn_debounce is
-    type db_state is (IDLE, PRESSED);   
+    type db_state is (idle, pressed);   
 
     constant CNT_MAX : integer := 999999;
 
-    signal state : db_state := IDLE;
+    signal state : db_state := idle;
 
     signal cnt : integer range 0 to CNT_MAX := 0;
 
@@ -25,16 +25,16 @@ begin
     begin
         if rising_edge(clk) then
             if (rst = '1') then
-                state  <= IDLE;
+                state  <= idle;
                 cnt    <= 0;
                 btn_db <= '0';
             else
                 case state is
-                    when IDLE =>
+                    when idle =>
                         btn_db <= '0';
                         if (btn = '1') then
                             if (cnt = CNT_MAX) then
-                                state  <= PRESSED;
+                                state  <= pressed;
                                 btn_db <= '1';
                                 cnt    <= 0;
                             else
@@ -44,11 +44,11 @@ begin
                             cnt <= 0;
                         end if;
 
-                    when PRESSED =>
+                    when pressed =>
                         btn_db <= '1';
                         if (btn = '0') then
                             if (cnt = CNT_MAX) then
-                                state  <= IDLE;
+                                state  <= idle;
                                 btn_db <= '0';
                                 cnt    <= 0;
                             else

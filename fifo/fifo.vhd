@@ -9,9 +9,9 @@ entity fifo is
     port (
         clk     : in  std_logic;
         rst     : in  std_logic;
-        wr_en   : in  std_logic;
+        wr_stb  : in  std_logic;
         wr_data : in  std_logic_vector(DATA_WIDTH-1 downto 0);
-        rd_en   : in  std_logic;
+        rd_stb  : in  std_logic;
         rd_data : out std_logic_vector(DATA_WIDTH-1 downto 0);
         full    : out std_logic;
         empty   : out std_logic
@@ -48,7 +48,7 @@ begin
                 buf     <= (others => (others => '0'));
                 rd_data <= (others => '0');
             else
-                if (wr_en = '1' and full_i = '0') then
+                if (wr_stb = '1' and full_i = '0') then
                     buf(wr_ptr) <= wr_data;
                     if (wr_ptr = FIFO_DEPTH-1) then
                         wr_ptr <= 0;
@@ -57,7 +57,7 @@ begin
                     end if;
                 end if;
                 
-                if (rd_en = '1' and empty_i = '0') then
+                if (rd_stb = '1' and empty_i = '0') then
                     rd_data <= buf(rd_ptr);
                     if (rd_ptr = FIFO_DEPTH-1) then
                         rd_ptr <= 0
@@ -66,9 +66,9 @@ begin
                     end if;
                 end if;
                 
-                if (wr_en = '1' and full_i = '0') and (rd_en = '0' or empty_i = '1') then
+                if (wr_stb = '1' and full_i = '0') and (rd_stb = '0' or empty_i = '1') then
                     cnt <= cnt + 1;
-                elsif (rd_en = '1' and empty_i = '0') and (wr_en = '0' or full_i = '1') then
+                elsif (rd_stb = '1' and empty_i = '0') and (wr_stb = '0' or full_i = '1') then
                     cnt <= cnt - 1;
                 end if;
             end if;
