@@ -10,10 +10,10 @@ In this video we build a **FIFO** (First-In First-Out). FIFOs allow us to store 
 
 | File | Description |
 |------|-------------|
-| `fifo_top.vhd` | Top-level FIFO implementation with configurable width and depth |
+| `fifo_top.vhd` | Top level file for our FIFO implementation with configurable width and depth |
 | `fifo.vhd` | FIFO module itself |
-| `seg_driver.vhd` | Testbench exercising normal operation and edge cases |
-| `fifo_top.xdc` | Constraint file for Basys 3 pin assignments |
+| `seg_driver.vhd` | 7-segment display driver |
+| `fifo_top.xdc` |FIFO constraint file |
 
 > **Note:** Be sure to add the btn_debounce file from `../db/` as its required for bitstream generation
 
@@ -21,6 +21,6 @@ In this video we build a **FIFO** (First-In First-Out). FIFOs allow us to store 
 
 | Date | Change | Reason |
 |------|--------|--------|
-| Initial release | `wr_en` & `rd_en` are now `wr_stb` & `rd_stb` | `stb` means that the data associated is only valid for a single clock cycle. `en` can mean different things to different systems so we've changed it for clarity |
+| 5/15/26 | `wr_en` & `rd_en` are now `wr_stb` & `rd_stb` | `stb` means that the data associated is only valid for a single clock cycle. `en` can mean different things to different systems so we've changed it for clarity |
 
 

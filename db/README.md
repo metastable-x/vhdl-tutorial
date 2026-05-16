@@ -4,7 +4,7 @@
 
 ## Project Summary
 
-In this video, we create a debouncer circuit using a state machine and verify it using the Basys3 7-segment display. The buttons on the Basys3 are analog and suseptible to noise. A debouncer can be used to verify the input from our button so that we only count one press every time the button is pushed. A state machine is a structure we can use to organize our logic. 
+In this video, we create a debouncer circuit using a state machine and verify it using the Basys3 7-segment display. The buttons on the Basys3 are analog and susceptible to noise. A debouncer can be used to verify the input from our button so that we only count one press every time the button is pushed. A state machine is a structure we can use to organize our logic. 
 
 ### Files
 
@@ -18,4 +18,4 @@ In this video, we create a debouncer circuit using a state machine and verify it
 
 | Date | Change | Reason |
 |------|--------|--------|
-| Initial release | The states idle and pressed are no longer capitalized | Stylization and clarity |
+| 5/15/26 | The states `idle` and `pressed` are no longer capitalized | Stylization and clarity |

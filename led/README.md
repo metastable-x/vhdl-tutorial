@@ -24,5 +24,5 @@ For this video, we test the onboard LEDs of the Basys3 with four major tests: tu
 
 | Date | Change | Reason |
 |------|--------|--------|
-| Initial release | All LEDs are connected | All tests can be run with the contraint file |
+| 5/15/26 | All LEDs are connected | All tests can be run with the contraint file |
 
