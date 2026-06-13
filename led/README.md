@@ -17,8 +17,7 @@ For this video, we test the onboard LEDs of the Basys3 with four major tests: tu
 | `led_test_strobe.vhd` | Top level file for a single LED strobe |
 | `led_test_sweep.vhd`  | Top level file for an LED sweep using all LEDs |
 | `led_test.vhd` | Top level file for a binary counter using all LEDs |
-| `led_test.xdc` | Basys3 constraints file for LED tests|
-
+| `led_test.xdc` | Basys3 constraint file for LED tests|
 
 ## Edits Made
 

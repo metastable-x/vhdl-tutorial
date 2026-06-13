@@ -1,14 +1,14 @@
 # VHDL Tutorial Series
 
-This repository contains all RTL written for my VHDL tutorial YouTube series. Each folder corresponds to a project covered in the series.
+This repository contains all RTL written in my VHDL tutorial YouTube series. Each folder corresponds to a project covered in the series.
 
 **Full Playlist:** [youtube.com/watch?v=CRsW5iSCA6Y&list=PL0n5Xs8-BlvRgiKNislo2LvXpLIaxNPUP](https://www.youtube.com/watch?v=CRsW5iSCA6Y&list=PL0n5Xs8-BlvRgiKNislo2LvXpLIaxNPUP)
 
 ## What is VHDL?
 
-VHDL (VHSIC Hardware Description Language) is a hardware description language used to model and design digital logic circuits. VHDL was originally developed in the 1980s under the U.S. Department of Defense's **Very High Speed Integrated Circuit** initiative and has since become one of the dominant HDLs in the industry. It's used for ASIC design and FPGA development. 
+VHDL (**VHSIC Hardware Description Language**) is a hardware description language used to model and design digital logic circuits. VHDL was originally developed in the 1980s under the U.S. Department of Defense's **Very High Speed Integrated Circuit** (**VHSIC**) initiative and has since become one of the most popular HDLs in the industry. It's used for ASIC design and FPGA development. 
 
-Unlike software programming languages, VHDL doesn't describe a sequence of instructions. It describes the structure and behavior of hardware. Constructs in VHDL represent real physical gates, flip-flops, and wires that can be implemented in silicon or on a programmable chip. VHDL can be used to build digital systems like digital signal processors, retro gaming consoles, or even a softcore processors (CPUs).
+Unlike software programming languages, VHDL doesn't describe a sequence of instructions. It describes the structure and behavior of hardware. Constructs in VHDL represent physical gates, flip-flops, and wires that can be implemented in silicon or on a programmable chip. VHDL can be used to build digital systems like filters, retro gaming consoles, or even modern softcore processors (CPUs).
 
 ## Tools Used in This Series
 
@@ -52,6 +52,7 @@ The Basys3 can be purchased from Digilent here: [Basys3](https://digilent.com/sh
 | [`led/`](./led/) | LED Display | First hardware project with four LED tests: a single LED, an LED strobe, an LED sweep, and an LED binary counter |
 | [`db/`](./db/) | Debouncer | Button debounce circuit and state machine implementation  |
 | [`fifo/`](./fifo/) | FIFO | First-In First-Out buffer implementation in VHDL |
+| [`uart/`](./uart/) | UART | UART transmitter implementation in VHDL |
 
 Each folder has its own `README.md` with a link to the corresponding video, a project summary, and a change log.
 
