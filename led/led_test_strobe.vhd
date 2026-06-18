@@ -24,6 +24,6 @@ begin
         end if;
     end process;
 
-    led(15 downto 1) <= '0';
+    led(15 downto 1) <= (others => '0');
     
 end architecture;

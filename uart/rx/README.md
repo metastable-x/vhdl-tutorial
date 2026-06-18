@@ -17,6 +17,6 @@ Building on our UART transmitter, we now add a receiver. This additon allows us 
 | `msg_pkg.vhd` | TX message package |
 | `uart.xdc` | Basys3 constraint file |
 
-> **Note:** Be sure to add `uart_tx.vhd` from `../tx/` & `btn_debounce.vhd` from `../../db/` & `seg_driver.vhd` from `../../fifo/` as they're required for bitstream generation
+> **Note:** Be sure to add `uart_tx.vhd` from `../tx/`, `btn_debounce.vhd` from `../../db/`, and `seg_driver.vhd` from `../../fifo/` as they're required for bitstream generation.
 
 

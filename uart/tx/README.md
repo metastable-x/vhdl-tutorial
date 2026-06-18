@@ -15,7 +15,7 @@ For this video, we test our UART understanding specifcally by building a transmi
 | `uart_ctrl.vhd` | UART controller which determines what's sent over the transmitter |
 | `uart.xdc` | Basys3 constraint file for UART TX |
 
-> **Note:** Be sure to add `btn_debounce.vhd` from `../../db/` as its required for bitstream generation
+> **Note:** Be sure to add `btn_debounce.vhd` from `../../db/` as its required for bitstream generation.
 
 ## Edits Made
 

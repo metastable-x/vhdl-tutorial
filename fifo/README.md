@@ -15,7 +15,7 @@ In this video we build a **FIFO** (First-In First-Out). FIFOs allow us to store 
 | `seg_driver.vhd` | 7-segment display driver |
 | `fifo_top.xdc` | FIFO constraint file |
 
-> **Note:** Be sure to add `btn_debounce.vhd` from `../db/` as its required for bitstream generation
+> **Note:** Be sure to add `btn_debounce.vhd` from `../db/` as its required for bitstream generation.
 
 ## Edits Made
 

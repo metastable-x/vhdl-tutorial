@@ -60,7 +60,7 @@ begin
                 if (rd_stb = '1' and empty_i = '0') then
                     rd_data <= buf(rd_ptr);
                     if (rd_ptr = FIFO_DEPTH-1) then
-                        rd_ptr <= 0
+                        rd_ptr <= 0;
                     else
                         rd_ptr <= rd_ptr + 1;
                     end if;

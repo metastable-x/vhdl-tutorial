@@ -29,7 +29,7 @@ begin
             else
                 cnt <= cnt + 1;
             end if;
-            led      <= '(others => '0')';
+            led      <= (others => '0');
             led(idx) <= '1';
         end if;
     end process;
