@@ -1,25 +1,11 @@
 # UART
 
-**Video:** [VHDL Tutorial — UART: TX](https://www.youtube.com/watch?v=rmKMLVji--s&t=56s)
-
 ## Project Summary
 
-For this video, we test our UART understanding specifcally by building a transmitter. This is done by sending a single character to a PuTTY terminal. Later we add a controller so that we can send entire messages with our transmitter.
+This section covers the design of a complete **8N1** (8 data bits / no parity bit / 1 stop bit) UART transceiver on the Basys3. We start with a transmitter, then extend the design to include a receiver, message selection, and 7-segment display. The project is split into two subfolders:
 
-### Files
-
-| File | Description |
-|------|-------------|
-| `uart_top.vhd` | Top level file for our UART system |
-| `uart_tx.vhd` | Transmitter block for UART |
-| `uart_ctrl.vhd`  | UART controller which determines what's sent over the transmitter |
-| `uart.xdc` | Basys3 constraint file for UART | 
-
-> **Note:** Be sure to add `btn_debounce.vhd` from `../db/` as its required for bitstream generation
-
-## Edits Made
-
-| Date | Change | Reason |
-|------|--------|--------|
-| 5/12/26 | `tx_ptr <= MSG_MAX;` added to reset conditions | If we reset our system in the middle of transmission we'll mess up our message. Though unlikely, this change removes an edge case error.|
+| Folder | Description |
+|--------|-------------|
+| [`tx/`](./tx/) | UART TX — sends messages over UART to a PuTTY terminal |
+| [`rx/`](./rx/) | UART RX — adds RX echo, message selection, and 7-segment display |
 

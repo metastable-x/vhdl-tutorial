@@ -52,7 +52,7 @@ The Basys3 can be purchased from Digilent here: [Basys3](https://digilent.com/sh
 | [`led/`](./led/) | LED Display | First hardware project with four LED tests: a single LED, an LED strobe, an LED sweep, and an LED binary counter |
 | [`db/`](./db/) | Debouncer | Button debounce circuit and state machine implementation  |
 | [`fifo/`](./fifo/) | FIFO | First-In First-Out buffer implementation in VHDL |
-| [`uart/`](./uart/) | UART | UART transmitter implementation in VHDL |
+| [`uart/`](./uart/) | UART | UART transceiver (transmitter & receiver) implementation in VHDL |
 
 Each folder has its own `README.md` with a link to the corresponding video, a project summary, and a change log.
 

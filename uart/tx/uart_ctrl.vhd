@@ -13,7 +13,7 @@ entity uart_ctrl is
 end entity;
 
 architecture rtl of uart_ctrl is
-    constant msg_ascii : std_logic_vector(55 downto 0) := X"48656C6C6F2120";
+    constant msg_ascii : std_logic_vector(55 downto 0) := X"68656C6C6F2120"; -- Reads "hello! " when converted from ascii
     
     constant MSG_MAX : integer := msg_ascii'length - 8;
 
