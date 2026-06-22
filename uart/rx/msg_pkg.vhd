@@ -4,6 +4,8 @@ use work.ascii_pkg.all;
 
 package msg_pkg is
 
+    type integer_vector is array (natural range <>) of integer;
+
     constant NUM_MSGS : integer := 6;
 
     constant MSG0 : string := "Hello! " & LF & LF;
