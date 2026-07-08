@@ -61,7 +61,7 @@ Each folder has its own `README.md` with a link to the corresponding video, a pr
 
 1. **Clone the repo:**
    ```bash
-   git clone https://github.com/metastable-x/vhdl-tutorial.git
+   git clone https://github.com/metastable-x/vhdl_tutorial.git
    ```
 
 2. **Simulate:** Open the project in ModelSim/Questasim, compile the source and testbench files, then run the simulation.
