@@ -19,4 +19,8 @@ Building on our UART transmitter, we now add a receiver. This additon allows us 
 
 > **Note:** Be sure to add `uart_tx.vhd` from `../tx/`, `btn_debounce.vhd` from `../../db/`, and `seg_driver.vhd` from `../../fifo/` as they're required for bitstream generation.
 
+| Date | Change | Reason |
+|------|--------|--------|
+| 7/7/26 | `btn`->`send` <br> `msg_sel`->`tx_sel` <br> `msg_max`->`ptr_max` | To add more clarity to the design. |
+
 

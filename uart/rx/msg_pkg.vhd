@@ -64,7 +64,7 @@ package msg_pkg is
     );
 
     function get_msg(sel : integer; ptr : integer) return std_logic_vector;
-    function msg_max(sel : integer) return integer;
+    function ptr_max(sel : integer) return integer;
 
 end package;
 
@@ -83,7 +83,7 @@ package body msg_pkg is
         end case;
     end function;
 
-    function msg_max(sel : integer) return integer is
+    function ptr_max(sel : integer) return integer is
     begin
         return MSG_LENS(sel) * 8 - 8;
     end function;

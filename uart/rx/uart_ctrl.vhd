@@ -5,11 +5,11 @@ use work.msg_pkg.all;
 
 entity uart_ctrl is
     port (
-        clk     : in  std_logic;
-        rst     : in  std_logic;
+        clk      : in  std_logic;
+        rst      : in  std_logic;
 
-        btn_stb : in  std_logic;
-        msg_sel : in  integer range 0 to NUM_MSGS-1;
+        send_stb : in  std_logic;
+        tx_sel   : in  integer range 0 to NUM_MSGS-1;
 
         rx_in   : in  std_logic_vector(7 downto 0);
         rx_stb  : in  std_logic;
@@ -21,15 +21,14 @@ entity uart_ctrl is
 end entity;
 
 architecture rtl of uart_ctrl is
+    type ctrl_state_t is (idle, shift, busy);
+    signal ctrl_state : ctrl_state_t := idle;
 
-    signal tx_ptr    : integer   := msg_max(0);
+    signal tx_ptr    : integer   := ptr_max(0);
     signal tx_cont   : std_logic := '0';
     signal tx_busy_i : std_logic := '0';
 
-    signal msg_sel_i : integer range 0 to NUM_MSGS-1;
-
-    type ctrl_state_t is (idle, shift, busy);
-    signal ctrl_state : ctrl_state_t := idle;
+    signal tx_sel_i : integer range 0 to NUM_MSGS-1;
 
 begin
 
@@ -39,22 +38,22 @@ begin
             if (rst = '1') then
                 tx_busy_i  <= '0';
                 tx_cont    <= '0';
-                tx_ptr     <= msg_max(0);
+                tx_ptr     <= ptr_max(0);
                 tx_stb     <= '0';
                 tx_out     <= (others => '0');
-                msg_sel_i  <= msg_sel;
+                tx_sel_i  <= tx_sel;
                 ctrl_state <= idle;
             else
                 tx_stb    <= '0';
                 tx_busy_i <= tx_busy;
-                msg_sel_i <= msg_sel;
+                tx_sel_i <= tx_sel;
 
                 case ctrl_state is
                     when idle =>
-                        if (msg_sel_i /= msg_sel) then
-                            tx_ptr     <= msg_max(msg_sel);
-                        elsif (btn_stb = '1' or tx_cont = '1') then
-                            tx_out     <= get_msg(msg_sel, tx_ptr);
+                        if (tx_sel_i /= tx_sel) then
+                            tx_ptr     <= ptr_max(tx_sel);
+                        elsif (send_stb = '1' or tx_cont = '1') then
+                            tx_out     <= get_msg(tx_sel, tx_ptr);
                             tx_stb     <= '1';
                             ctrl_state <= shift;
                         elsif (tx_busy = '0' and rx_stb = '1') then
@@ -66,13 +65,13 @@ begin
                         if (tx_ptr > 0) then
                             tx_ptr <= tx_ptr - 8;
                         else
-                            tx_ptr <= msg_max(msg_sel);
+                            tx_ptr <= ptr_max(tx_sel);
                         end if;
                         ctrl_state <= busy;
 
                     when busy =>
                         if (tx_busy = '0' and tx_busy_i = '1') then
-                            if (tx_ptr = msg_max(msg_sel)) then
+                            if (tx_ptr = ptr_max(tx_sel)) then
                                 tx_cont <= '0';
                             else
                                 tx_cont <= '1';

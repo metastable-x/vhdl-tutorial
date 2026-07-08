@@ -20,7 +20,7 @@ architecture rtl of uart_rx is
 
     type rx_state_t is (idle, start, data, stop);
 
-    signal rx_state : rx_state_t;
+    signal rx_state : rx_state_t := idle;
 
     signal msg : std_logic_vector(7 downto 0) := (others => '0');
 
