@@ -69,5 +69,3 @@ Each folder has its own `README.md` with a link to the corresponding video, a pr
 3. **Synthesize:** Open or create a Vivado project, add the VHDL source and constraints file, then run synthesis → implementation → generate bitstream.
 
 4. **Program:** Connect your Basys3 over USB, open the Hardware Manager in Vivado, and program the device with the generated `.bit` file.
-
-
